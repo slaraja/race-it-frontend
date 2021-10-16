@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Race from "./Race";
 
 //this functional component is returning HTML
 function App() {
@@ -9,8 +10,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>
        Testing my app 
-      </h1>
-      
+        </h1>
+        < Race />
         <a
           className="App-link"
           href="https://reactjs.org"
