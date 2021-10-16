@@ -1,4 +1,5 @@
 import React from "react";
+import RaceCard from "./RaceCard";
 
 //need to use class if utilize state
 class RacesContainer extends React.Component{
