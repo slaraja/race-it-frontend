@@ -1,7 +1,9 @@
 function RaceCard(props){
 
     return(
-    <h2> race name and info </h2>
+        <div class="card" id={`race-${props.id}`}>
+            <h1>{props.name}</h1>
+        </div>
     )
 }
 
