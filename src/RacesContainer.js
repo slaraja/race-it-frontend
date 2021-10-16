@@ -11,12 +11,13 @@ class RacesContainer extends React.Component{
     }
 
     makeRaceCards(){
-        this.state.races.map(race => <RaceCard id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
+        return this.state.races.map(race => <RaceCard id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
 
     render(){
         return(
             <h2> races container render </h2>
+            
         )
     }
 
@@ -25,7 +26,9 @@ class RacesContainer extends React.Component{
         .then(resp => resp.json())
         //converts stringified format to json
         .then(json => {
-
+            console.log(json)
+            this.setState ({toys: json})
+            //causes a re-render
         })
         //handle the json, update state
 
