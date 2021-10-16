@@ -6,6 +6,12 @@ class RacesContainer extends React.Component{
         races: []
     }
 
+    render(){
+        return(
+            <h2> races container render </h2>
+        )
+    }
+
     // componentDidMount(){
     //     fetch(http://localhost:3000/races)
     //     .then(resp => resp.json())
