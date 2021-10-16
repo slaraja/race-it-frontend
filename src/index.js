@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//App is being called as an HTMl element and being executed as function.
+//We can ditch the dollar sign for interpolation.
 ReactDOM.render(
   <React.StrictMode>
     <App />
