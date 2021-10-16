@@ -9,10 +9,9 @@ class RacesContainer extends React.Component{
         //when we get back our fetch, we can update this
     }
 
-    makeRaceCard(){
-        this.state.map(race => )
+    makeRaceCards(){
+        this.state.races.map(race => <RaceCard id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
-
 
     render(){
         return(
