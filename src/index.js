@@ -12,8 +12,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+//Function above takes in 2 args
+//1. What to render on the page
+//2. Where to render it on the page
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

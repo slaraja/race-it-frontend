@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import Race from "./Race";
 import RacesContainer from "./RacesContainer";
 
 
@@ -12,7 +11,6 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1> Race It </h1>
         <h2> Find your next running event! </h2>
-        < Race />
         < RacesContainer />
         <a
           className="App-link"
