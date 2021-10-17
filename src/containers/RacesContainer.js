@@ -31,7 +31,7 @@ class RacesContainer extends React.Component{
         //converts stringified format to json
         .then(json => {
             console.log(json)
-            this.setState ({races: json})
+           // this.setState ({races: json}) - need to dispatch an action
             //happens async
             //causes a re-render
         })
@@ -53,17 +53,16 @@ class RacesContainer extends React.Component{
                </div>
             </div>
         ) 
-    }
-
-    const mapStateToProps = (state) => {
-        return {
-            races: state.races
-        //gives a prop of .races
-        }
-    }
-
+}
 }
 
+
+    function mapStateToProps(state) {
+        return {
+            races: state.races
+            //gives a prop of .races
+        };
+    }
 
 
 export default connect(mapStateToProps)(RacesContainer);
