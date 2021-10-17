@@ -1,5 +1,5 @@
 import './App.css';
-import RacesContainer from "./RacesContainer";
+import RacesContainer from './containers/RacesContainer';
 
 
 //this functional component is returning HTML

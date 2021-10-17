@@ -1,6 +1,6 @@
 import React from "react";
-import RaceCard from "./RaceCard";
-import RaceSearch from "./RaceSearch";
+import RaceCard from "../RaceCard";
+import RaceSearch from "../RaceSearch";
 
 
 //container components contain other components
