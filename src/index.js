@@ -21,7 +21,7 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-//Function above takes in 2 args
+//Function above takes in 2 args (before thunk)
 //1. What to render on the page
 //2. Where to render it on the page
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import RaceCard from '../components/RaceCard';
 import RaceSearch from '../components/RaceSearch';
-
+import {connect} from 'react-redux';
 
 //container components contain other components
 //this container respon for fetching data
@@ -12,11 +12,11 @@ class RacesContainer extends React.Component{
     //race container instance
     //key of races
     //this sets initial state
-    state = {
-        races: []
-        //when we get back our fetch, we can update this
-        //when state changes, it causes a rerender
-    }
+    // state = {
+    //     races: []
+    //     //when we get back our fetch, we can update this
+    //     //when state changes, it causes a rerender
+    // }
 
     makeRaceCards(){
         return this.state.races.map(race => <RaceCard id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
@@ -56,4 +56,4 @@ class RacesContainer extends React.Component{
 }
 
 
-export default RacesContainer;
+export default connect(mapStateToProps)(RacesContainer);
