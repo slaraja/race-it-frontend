@@ -17,6 +17,16 @@ class raceSearch extends React.Component{
         //keep track of what the user typed
     }
 
+    render(){
+        return (
+        <div>
+        <form onSubmit={this.props.handleSubmit}>
+            <input type="text" input="input" onChange={this.handleInputChange} value={this.state.input}/>
+            <input type="submit" value="Find Races"/>
+        </form>
+        </div>
+        )
+    }
 }
 
 export default raceSearch;
