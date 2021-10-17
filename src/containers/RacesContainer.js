@@ -66,9 +66,10 @@ class RacesContainer extends React.Component{
     }
 
     function mapDispatchToProps(dispatch) {
-        //causes reducer to run
+        //dispatch is a key in the store that gives us the ability to update store
+        //causes reducer to run, which is how we update store
         return {
-            fetchRaces: () => dispatch(fetchRaces())
+            fetchRaces: (races) => dispatch({type: "FETCHED_RACES", payload: races})
         }
             //gives a prop of .races
     }
