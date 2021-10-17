@@ -1,6 +1,6 @@
 const raceReducer = (state = { races: [], loading: false }, action) => {
     switch(action.type){
-        case "GOT_RACES":
+        case "FETCHED_RACES":
             return {...state, races: action.payload, loading: false}
         case "ADDED_RACE":
             return { ...state, races: [...state.races, action.payload] }

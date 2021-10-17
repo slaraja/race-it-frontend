@@ -64,5 +64,13 @@ class RacesContainer extends React.Component{
         };
     }
 
+    function mapDispatchToProps(dispatch) {
+        //causes reducer to run
+        return {
+            fetchedRaces: () => dispatch(fetchedRaces())
+        }
+            //gives a prop of .races
+    }
 
-export default connect(mapStateToProps)(RacesContainer);
+
+export default connect(mapStateToProps, mapDispatchToProps)(RacesContainer);
