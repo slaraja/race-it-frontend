@@ -1,7 +1,10 @@
 import React from "react";
 import RaceCard from "./RaceCard";
+import RaceSearch from "./RaceSearch";
+
 
 //container components contain other components
+//this container respon for fetching data
 
 //need to use Class if utilize state
 class RacesContainer extends React.Component{
@@ -34,23 +37,17 @@ class RacesContainer extends React.Component{
         //handle the json, update state
     }
 
-    handleInput(){
-
-    }
-
     render(){
         return(
             <div id="race-container">
                 <div>
-                    <input type="text" placeholder="Find a race!" />
-                </div>
+                < RaceSearch />
                {this.makeRaceCards()}
+               </div>
             </div>
         ) 
     }
-
-
-
 }
 
-export default RacesContainer
+
+export default RacesContainer;
