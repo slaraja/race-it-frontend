@@ -34,6 +34,7 @@ class RacesContainer extends React.Component{
            // this.setState ({races: json}) - need to dispatch an action
             //happens async
             //causes a re-render
+            this.props.fetchRaces(json) //calling reducer funciton
         })
         //handle the json, update state
     }
@@ -67,7 +68,7 @@ class RacesContainer extends React.Component{
     function mapDispatchToProps(dispatch) {
         //causes reducer to run
         return {
-            fetchedRaces: () => dispatch(fetchedRaces())
+            fetchRaces: () => dispatch(fetchRaces())
         }
             //gives a prop of .races
     }
