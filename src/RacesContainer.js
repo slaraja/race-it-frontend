@@ -12,6 +12,7 @@ class RacesContainer extends React.Component{
 
     makeRaceCards(){
         return this.state.races.map(race => <RaceCard id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
+        //maps over racecard, returns racecard and passes in all the data
     }
 
     componentDidMount(){
