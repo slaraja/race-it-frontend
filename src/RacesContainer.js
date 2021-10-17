@@ -37,11 +37,17 @@ class RacesContainer extends React.Component{
         //handle the json, update state
     }
 
+    handleSearch = (search) => {
+
+        // another fetch
+
+      }
+
     render(){
         return(
             <div id="race-container">
                 <div>
-                < RaceSearch />
+                < RaceSearch handleSearch={this.handleSearch} />
                {this.makeRaceCards()}
                </div>
             </div>
