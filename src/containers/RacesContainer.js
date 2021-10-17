@@ -19,7 +19,8 @@ class RacesContainer extends React.Component{
     // }
 
     makeRaceCards(){
-        return this.state.races.map(race => <RaceCard id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
+        //changes .state to .props because we are mapping props to state
+        return this.props.races.map(race => <RaceCard id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
         //this is talking about the container object
         //maps over racecard, returns racecard and passes in all the data
     }
@@ -41,7 +42,7 @@ class RacesContainer extends React.Component{
 
         // another fetch
 
-      }
+    }
 
     render(){
         return(
@@ -53,7 +54,16 @@ class RacesContainer extends React.Component{
             </div>
         ) 
     }
+
+    const mapStateToProps = (state) => {
+        return {
+            races: state.races
+        //gives a prop of .races
+        }
+    }
+
 }
+
 
 
 export default connect(mapStateToProps)(RacesContainer);
