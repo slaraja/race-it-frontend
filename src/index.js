@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+import {composeWithDevTools} from 'redux-devtools-extension';
+import thunk from 'redux-thunk'
+import raceReducer from './reducers/raceReducer'
 
 //App is being called as an HTMl element and being executed as function.
 //We can ditch the dollar sign for interpolation.
