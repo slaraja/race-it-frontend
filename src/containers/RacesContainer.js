@@ -2,6 +2,7 @@ import React from 'react';
 import RaceCard from '../components/RaceCard';
 import RaceSearch from '../components/RaceSearch';
 import {connect} from 'react-redux';
+import {fetchRAces} from '../actions/fetchRaces';
 
 //container components contain other components
 //this container respon for fetching data
@@ -25,19 +26,19 @@ class RacesContainer extends React.Component{
         //maps over racecard, returns racecard and passes in all the data
     }
 
-    componentDidMount(){
-        fetch("http://localhost:3000/races")
-        .then(resp => resp.json())
-        //converts stringified format to json
-        .then(json => {
-            console.log(json)
-           // this.setState ({races: json}) - need to dispatch an action
-            //happens async
-            //causes a re-render
-            this.props.fetchRaces(json) //calling reducer funciton
-        })
-        //handle the json, update state
-    }
+    // componentDidMount(){
+    //     fetch("http://localhost:3000/races")
+    //     .then(resp => resp.json())
+    //     //converts stringified format to json
+    //     .then(json => {
+    //         console.log(json)
+    //        // this.setState ({races: json}) - need to dispatch an action
+    //         //happens async
+    //         //causes a re-render
+    //         this.props.fetchRaces(json) //calling reducer funciton
+    //     })
+    //     //handle the json, update state
+    // }
 
     handleSearch = (search) => {
 
