@@ -7,15 +7,12 @@ class raceSearch extends React.Component{
     }
 
     //arrow funciton gives us the ability to call it later
-    handleInputChange = (e) => {
-        const input = e.target.input
-        const value = e.target.value
-
+    handleOnChange = (e) => {
         this.setState({
-            [input]: value
-        })
+            input: e.target.value
+          })
+        }
         //keep track of what the user typed
-    }
 
     handleOnSubmit = (e) => {
         e.preventDefault();
@@ -23,14 +20,12 @@ class raceSearch extends React.Component{
         this.setState({input: ""})
     }
 
-    render(){
+    render() {
         return (
-        <div>
         <form onSubmit={this.props.handleOnSubmit}>
             <input type="text" input="input" onChange={this.handleInputChange} value={this.state.input}/>
             <input type="submit" value="Find Races"/>
         </form>
-        </div>
         )
     }
 }
