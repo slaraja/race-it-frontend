@@ -36,7 +36,7 @@ class RacesContainer extends React.Component{
     }
 
     componentDidMount(){
-        console.log("componentDidMount")
+        console.log("#2: begin componentDidMount")
         this.props.fetchRaces()
     //     fetch("http://localhost:3000/races")
     //     .then(resp => resp.json())
@@ -49,6 +49,8 @@ class RacesContainer extends React.Component{
     //         this.props.fetchRaces(json) //calling reducer funciton
     //     })
     //     //handle the json, update state
+        console.log("#5: end of componentDidMount")
+
     }
 
     handleSearch = (search) => {
@@ -82,7 +84,7 @@ class RacesContainer extends React.Component{
     function mapDispatchToProps(dispatch) {
         //dispatch is a key in the store that gives us the ability to update store
         //causes reducer to run, which is how we update store
-        console.log(fetchRaces, "#2: fetchRaces")
+        console.log(fetchRaces, "fetchRaces")
         return {
             fetchRaces: () => dispatch(fetchRaces())
         }
