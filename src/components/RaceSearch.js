@@ -1,33 +1,46 @@
-import React from 'react'
+function RaceSearch(props){
+    return (
+      <>
+      <form>
+        <input
+          placeholder="Search for a race" onChange={(e)=>props.handleSearch(e.target.value)}
+        />
+      </form>
+      </>
+    )}
 
-class raceSearch extends React.Component{
+export default RaceSearch;
 
-    state = {
-        input: ""
-    }
+// import React from 'react'
 
-    //arrow function gives us the ability to call it later
-    handleOnChange = (e) => {
-        this.setState({
-            input: e.target.value
-          })
-        }
-        //keep track of what the user typed
+// class raceSearch extends React.Component{
 
-    handleOnSubmit = (e) => {
-        e.preventDefault();
-        this.props.handleSearch(this.state.input)
-        this.setState({input: ""})
-    }
+//     state = {
+//         input: ""
+//     }
 
-    render() {
-        return (
-        <form onSubmit={this.handleOnSubmit}>
-            <input type="text" input="input" onChange={this.handleOnChange} value={this.state.input}/>
-            <input type="submit" value="Find Races"/>
-        </form>
-        )
-    }
-}
+//     //arrow function gives us the ability to call it later
+//     handleOnChange = (e) => {
+//         this.setState({
+//             input: e.target.value
+//           })
+//         }
+//         //keep track of what the user typed
 
-export default raceSearch;
+//     handleOnSubmit = (e) => {
+//         e.preventDefault();
+//         this.props.handleSearch(this.state.input)
+//         this.setState({input: ""})
+//     }
+
+//     render() {
+//         return (
+//         <form onSubmit={this.handleOnSubmit}>
+//             <input type="text" input="input" searchTerm={this.state.search} onChange={this.handleOnChange} value={this.state.input}/>
+//             <input type="submit" value="Find Races"/>
+//         </form>
+//         )
+//     }
+// }
+
+// export default raceSearch;

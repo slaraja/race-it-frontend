@@ -8,9 +8,7 @@ import NavBar from './components/NavBar';
 function App() {
   return (
     <div className="App">
-        {/* <h1> Race It </h1>
-        <h2> Find your next running event! </h2> */}
-        < NavBar color='orange' title="Hello" />
+        < NavBar color='orange' title="Race It" />
         < RacesContainer />
     </div>
   );

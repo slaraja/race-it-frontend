@@ -12,28 +12,10 @@ import {URL} from '../actions/raceActions';
 //need to use Class if utilize state
 class RacesContainer extends React.Component{
 
-    //race container instance
-    //key of races
-    //this sets initial state
-    // state = {
-    //     races: []
-    //     //when we get back our fetch, we can update this
-    //     //when state changes, it causes a rerender
-    // }
-
     makeRaceCards(){
-        //changes .state to .props because we are mapping props to state
         // console.log(this.props, "race card props")
-        // return(
-        // <div>
-        return this.props.races.map(race => <RaceCard id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
-        // </div>
-        // )
-    
-        // return this.props.races.map(race => <RaceCard race={race} />)
 
-        //this is talking about the container object
-        //maps over racecard, returns racecard and passes in all the data
+        return this.props.races.map(race => <RaceCard id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
 
     componentDidMount(){
@@ -43,16 +25,25 @@ class RacesContainer extends React.Component{
     }
 
 
-handleSearch = (search) => {
+    handleSearch = (search) => {
 
-    fetch(URL)
-    .then(resp => resp.json())
-    .then(data => {
-      let race = data.data.map(race => xxxx)
-      this.setState({
-        races: makeRaceCards
-      })
+        this.setState({
+            search: search 
     })
+
+
+//     filterRaces = (race, searchTerm) => {
+//         return race.name.includes(searchTerm) || race.date.includes(searchTerm) || race.city.includes(searchTerm) || race.state.includes(searchTerm) || race.zipcode.includes(searchTerm)
+// } 
+
+//     fetch(URL)
+//     .then(resp => resp.json())
+//     .then(data => {
+//       let race = data.data.map(race => xxxx)
+//       this.setState({
+//         races: makeRaceCards
+//       })
+//     })
 }
 
 
@@ -77,6 +68,7 @@ handleSearch = (search) => {
             //gives a prop of .races
         };
     }
+
 
     function mapDispatchToProps(dispatch) {
         //dispatch is a key in the store that gives us the ability to update store
