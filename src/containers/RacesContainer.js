@@ -2,7 +2,8 @@ import React from 'react';
 import RaceCard from '../components/RaceCard';
 import RaceSearch from '../components/RaceSearch';
 import {connect} from 'react-redux';
-import {fetchRaces} from '../actions/fetchRaces';
+import {fetchRaces}  from '../actions/raceActions';
+
 
 //container components contain other components
 //this container respon for fetching data
@@ -21,12 +22,21 @@ class RacesContainer extends React.Component{
 
     makeRaceCards(){
         //changes .state to .props because we are mapping props to state
+        // console.log(this.props, "race card props")
+        // return(
+        // <div>
         return this.props.races.map(race => <RaceCard id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
+        // </div>
+        // )
+    
+        // return this.props.races.map(race => <RaceCard race={race} />)
+
         //this is talking about the container object
         //maps over racecard, returns racecard and passes in all the data
     }
 
     componentDidMount(){
+        console.log("componentDidMount")
         this.props.fetchRaces()
     //     fetch("http://localhost:3000/races")
     //     .then(resp => resp.json())
@@ -48,6 +58,7 @@ class RacesContainer extends React.Component{
     }
 
     render(){
+        console.log(this.props, "props")
         return(
             <div id="race-container">
                 <div>
@@ -61,6 +72,7 @@ class RacesContainer extends React.Component{
 
 
     function mapStateToProps(state) {
+        console.log(state, "#1: mapStateToProps")
         return {
             races: state.races
             //gives a prop of .races
@@ -71,7 +83,7 @@ class RacesContainer extends React.Component{
         //dispatch is a key in the store that gives us the ability to update store
         //causes reducer to run, which is how we update store
         return {
-            fetchRaces: (races) => dispatch({type: "START_FETCHING_RACES", payload: races})
+            fetchRaces: () => dispatch(fetchRaces())
         }
             //gives a prop of .races
     }
