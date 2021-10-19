@@ -22,8 +22,8 @@ class raceSearch extends React.Component{
 
     render() {
         return (
-        <form onSubmit={this.props.handleOnSubmit}>
-            <input type="text" input="input" onChange={this.handleInputChange} value={this.state.input}/>
+        <form onSubmit={this.handleOnSubmit}>
+            <input type="text" input="input" onChange={this.handleOnChange} value={this.state.input}/>
             <input type="submit" value="Find Races"/>
         </form>
         )

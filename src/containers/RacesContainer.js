@@ -48,7 +48,7 @@ handleSearch = (search) => {
     fetch(URL)
     .then(resp => resp.json())
     .then(data => {
-      let gifImages = data.data.map(race => xxxx)
+      let race = data.data.map(race => xxxx)
       this.setState({
         races: makeRaceCards
       })
