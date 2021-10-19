@@ -6,7 +6,7 @@ class raceSearch extends React.Component{
         input: ""
     }
 
-    //arrow funciton gives us the ability to call it later
+    //arrow function gives us the ability to call it later
     handleOnChange = (e) => {
         this.setState({
             input: e.target.value

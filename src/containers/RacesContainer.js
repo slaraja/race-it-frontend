@@ -3,6 +3,7 @@ import RaceCard from '../components/RaceCard';
 import RaceSearch from '../components/RaceSearch';
 import {connect} from 'react-redux';
 import {fetchRaces}  from '../actions/raceActions';
+import {URL} from '../actions/raceActions';
 
 
 //container components contain other components
@@ -38,26 +39,22 @@ class RacesContainer extends React.Component{
     componentDidMount(){
         console.log("#2: begin componentDidMount")
         this.props.fetchRaces()
-    //     fetch("http://localhost:3000/races")
-    //     .then(resp => resp.json())
-    //     //converts stringified format to json
-    //     .then(json => {
-    //         console.log(json)
-    //        // this.setState ({races: json}) - need to dispatch an action
-    //         //happens async
-    //         //causes a re-render
-    //         this.props.fetchRaces(json) //calling reducer funciton
-    //     })
-    //     //handle the json, update state
         console.log("#5: end of componentDidMount")
-
     }
 
-    handleSearch = (search) => {
 
-        // another fetch
+handleSearch = (search) => {
 
-    }
+    fetch(URL)
+    .then(resp => resp.json())
+    .then(data => {
+      let gifImages = data.data.map(race => xxxx)
+      this.setState({
+        races: makeRaceCards
+      })
+    })
+}
+
 
     render(){
         console.log(this.props, "props")
