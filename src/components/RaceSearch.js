@@ -1,46 +1,47 @@
-function RaceSearch(props){
-    return (
-      <>
-      <form>
-        <input
-          placeholder="Search for a race" onChange={(e)=>props.handleSearch(e.target.value)}
-        />
-      </form>
-      </>
-    )}
+import React from 'react'
 
-export default RaceSearch;
+class raceSearch extends React.Component{
 
-// import React from 'react'
+    state = {
+        input: ""
+    }
 
-// class raceSearch extends React.Component{
+    //arrow function gives us the ability to call it later
+    handleOnChange = (e) => {
+        console.log(e.target.value, "e.target.value")
+        this.setState({
+            input: e.target.value
+          })
+        }
+        //keep track of what the user typed
 
-//     state = {
-//         input: ""
-//     }
+    handleOnSubmit = (e) => {
+        e.preventDefault();
+        this.props.handleSearch(this.state.input)
+        this.setState({input: ""})
+    }
 
-//     //arrow function gives us the ability to call it later
-//     handleOnChange = (e) => {
-//         this.setState({
-//             input: e.target.value
-//           })
-//         }
-//         //keep track of what the user typed
+    render() {
+        return (
+        <form onSubmit={this.handleOnSubmit}>
+            <input type="text" input="input" searchTerm={this.state.search} onChange={this.handleOnChange} value={this.state.input}/>
+            <input type="submit" value="Find Races"/>
+        </form>
+        )
+    }
+}
 
-//     handleOnSubmit = (e) => {
-//         e.preventDefault();
-//         this.props.handleSearch(this.state.input)
-//         this.setState({input: ""})
-//     }
+export default raceSearch;
 
-//     render() {
-//         return (
-//         <form onSubmit={this.handleOnSubmit}>
-//             <input type="text" input="input" searchTerm={this.state.search} onChange={this.handleOnChange} value={this.state.input}/>
-//             <input type="submit" value="Find Races"/>
-//         </form>
-//         )
-//     }
-// }
+// function RaceSearch(props){
+//     return (
+//       <>
+//       <form>
+//         <input
+//           placeholder="Search for a race" onChange={(e)=>props.handleSearch(e.target.value)}
+//         />
+//       </form>
+//       </>
+//     )}
 
-// export default raceSearch;
+// export default RaceSearch;
