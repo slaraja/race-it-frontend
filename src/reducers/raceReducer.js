@@ -1,4 +1,4 @@
-const raceReducer = (state = { races: [], loading: false }, action) => {
+const raceReducer = (state = { races: [], loading: true }, action) => {
     switch(action.type){
         case "START_FETCHING_RACES":
             return {...state, races: action.payload, loading: false}

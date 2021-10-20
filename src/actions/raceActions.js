@@ -2,6 +2,8 @@ export const URL = "http://localhost:3000/races"
 
 export const startRaceFetch = (races) => ({type: "START_FETCHING_RACES", payload: races})
 
+export const addRace = (race) => ({type: "ADDED_RACE", payload: race})
+
 //thunk gives ability to return a function with a default arg of dispatch
 export const fetchRaces = () => {
     console.log("#3: in fetchRaces")
