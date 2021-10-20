@@ -22,4 +22,23 @@ export const fetchRaces = () => {
     }
 }
 
+export const createRace = (race) => {
+    return (dispatch) => {
+        const configObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accepts": "application/json"
+            },
+            body: JSON.stringify(race)
+        }
+        fetch(URL, configObj)
+        .then(resp => resp.json())
+        .then(json => {
+            dispatch(addRace(json)) //calling reducer funciton
+
+        })
+    }
+
+}
 
