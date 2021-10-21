@@ -4,12 +4,7 @@ import RaceSearch from '../components/RaceSearch';
 import {connect} from 'react-redux';
 import {fetchRaces}  from '../actions/raceActions';
 // import {createRace}  from '../actions/raceActions';
-
-
 // import {URL} from '../actions/raceActions';
-
-//container components contain other components
-//this container respon for fetching data
 
 class RacesContainer extends React.Component{
 
@@ -23,16 +18,6 @@ class RacesContainer extends React.Component{
         this.props.fetchRaces()
         console.log("#5: end of componentDidMount")
     }
-
-
-
-
-
-
-//     filterRaces = (race, searchTerm) => {
-     //  return race.name.includes(searchTerm) || race.date.includes(searchTerm) || race.city.includes(searchTerm) || race.state.includes(searchTerm) || race.zipcode.includes(searchTerm)
-
-// } 
 
 //     fetch(URL)
 //     .then(resp => resp.json())
