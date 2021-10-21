@@ -3,6 +3,9 @@ import RaceCard from '../components/RaceCard';
 import RaceSearch from '../components/RaceSearch';
 import {connect} from 'react-redux';
 import {fetchRaces}  from '../actions/raceActions';
+// import {createRace}  from '../actions/raceActions';
+
+
 // import {URL} from '../actions/raceActions';
 
 //container components contain other components
@@ -22,13 +25,8 @@ class RacesContainer extends React.Component{
     }
 
 
-    handleSearch = (search) => {
 
-        this.setState({
-            search: search 
-        
 
-    })
 
 
 //     filterRaces = (race, searchTerm) => {
@@ -44,23 +42,19 @@ class RacesContainer extends React.Component{
 //         races: makeRaceCards
 //       })
 //     })
-}
-
 
     render(){
-        console.log(this.props, "props")
         return(
             <div id="race-container">
                 <div>
-                < RaceSearch handleSearch={this.handleSearch} />
+                < RaceSearch handleSearch={this.handleSearch} allRaces={this.props.races} />
                {this.makeRaceCards()}
                </div>
             </div>
         ) 
-}
-}
+    }
 
-
+}
     function mapStateToProps(state) {
         console.log(state, "#1: mapStateToProps")
         return {

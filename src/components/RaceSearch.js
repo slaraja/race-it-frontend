@@ -15,15 +15,26 @@ class raceSearch extends React.Component{
         }
         //keep track of what the user typed
 
-    handleOnSubmit = (e) => {
+    // handleOnSubmit = (e) => {
+    //     e.preventDefault();
+    //     this.props.handleSearch(this.state.input)
+    //     this.setState({input: ""})
+    // }
+
+
+    handleSearch = (e) => {
         e.preventDefault();
-        this.props.handleSearch(this.state.input)
-        this.setState({input: ""})
+         const filterRaces = this.props.allRaces.filter ((race) => {
+            return race.name.includes(this.state.input)
+        })   
+        console.log(filterRaces, "filterRaces")
+
     }
 
     render() {
+        console.log(this.props)
         return (
-        <form onSubmit={this.handleOnSubmit}>
+        <form onSubmit={this.handleSearch}>
             <input type="text" input="input" searchTerm={this.state.search} onChange={this.handleOnChange} value={this.state.input}/>
             <input type="submit" value="Find Races"/>
         </form>
