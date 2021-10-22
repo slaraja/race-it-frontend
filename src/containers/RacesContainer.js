@@ -1,7 +1,7 @@
 import React from 'react';
 import RaceCard from '../components/RaceCard';
 import RaceSearch from '../components/RaceSearch';
-import {connect} from 'react-redux';
+import {connect} from 'react-redux'; //connects react with redux
 import {fetchRaces}  from '../actions/raceActions';
 // import {createRace}  from '../actions/raceActions';
 // import {URL} from '../actions/raceActions';
@@ -11,11 +11,6 @@ class RacesContainer extends React.Component{
     state = {
         filteredRaceArr: []
     }
-
-    // makeRaceCards(arr){
-    //     // console.log(this.props, "race card props")
-    //     return arr.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
-    // }
 
     makeRaceCards(arr){
         return arr.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
@@ -79,20 +74,10 @@ class RacesContainer extends React.Component{
         return {
             races: state.races
             //gives a prop of .races
+            //access to props, dispatch helps with manipulation
         };
     }
 
 
-    function mapDispatchToProps(dispatch) {
-        //dispatch is a key in the store that gives us the ability to update store
-        //causes reducer to run, which is how we update store
-        console.log(fetchRaces, "fetchRaces")
-        return {
-            fetchRaces: () => dispatch(fetchRaces())
-        }
-            //gives a prop of .races
-    }
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(RacesContainer);
+export default connect(mapStateToProps)(RacesContainer);
 

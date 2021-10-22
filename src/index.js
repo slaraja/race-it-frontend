@@ -19,6 +19,8 @@ import {
 const store = createStore(raceReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 //App is being called as an HTMl element and being executed as function.
+//Store variable is defined above and can be anything
+//Store next to provider is a special word that comes from the redux library
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
