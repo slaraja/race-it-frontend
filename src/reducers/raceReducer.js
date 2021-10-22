@@ -1,3 +1,5 @@
+//this is the global state
+//reducer - set the global state and alter it with actions.
 const raceReducer = (state = { races: [], loading: true }, action) => {
     switch(action.type){
         case "START_FETCHING_RACES":

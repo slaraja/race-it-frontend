@@ -12,26 +12,30 @@ class RacesContainer extends React.Component{
         filteredRaceArr: []
     }
 
+    // makeRaceCards(arr){
+    //     // console.log(this.props, "race card props")
+    //     return arr.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
+    // }
+
     makeRaceCards(arr){
-        // console.log(this.props, "race card props")
         return arr.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
 
-    componentDidMount(){
-        console.log("#2: begin componentDidMount")
-        this.props.fetchRaces()
-        //move to app, in child components will get data
-        console.log("#5: end of componentDidMount")
-    }
+    // componentDidMount(){
+    //     console.log("#2: begin componentDidMount")
+    //     this.props.fetchRaces()
+    //     //move to app, in child components will get data
+    //     console.log("#5: end of componentDidMount")
+    // }
 
-//     fetch(URL)
-//     .then(resp => resp.json())
-//     .then(data => {
-//       let race = data.data.map(race => xxxx)
-//       this.setState({
-//         races: makeRaceCards
-//       })
-//     })
+    // fetch(URL)
+    // .then(resp => resp.json())
+    // .then(data => {
+    //   let race = data.data.map(race => xxxx)
+    //   this.setState({
+    //     races: makeRaceCards
+    //   })
+    // })
 
 //     handleSearch = (e) => {
 //     e.preventDefault();
@@ -57,6 +61,7 @@ class RacesContainer extends React.Component{
 
     render(){
         console.log(this.state)
+        
         return(
             <div id="race-container">
                 <div>
@@ -90,3 +95,4 @@ class RacesContainer extends React.Component{
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(RacesContainer);
+
