@@ -15,12 +15,6 @@ class raceSearch extends React.Component{
         }
         //keep track of what the user typed
 
-    // handleOnSubmit = (e) => {
-    //     e.preventDefault();
-    //     this.props.handleSearch(this.state.input)
-    //     this.setState({input: ""})
-    // }
-
 
     handleSearch = (e) => {
         e.preventDefault();
