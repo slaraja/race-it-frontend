@@ -24,7 +24,6 @@ class raceSearch extends React.Component{
         //  const filterRaces = this.props.allRaces.filter ((race) => {
         //     return race.name.toLowerCase().includes(this.state.input)
         // })   
-
     }
 
     render() {

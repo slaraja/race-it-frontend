@@ -9,14 +9,12 @@ import {fetchRaces}  from '../actions/raceActions';
 class RacesContainer extends React.Component{
 
     state = {
-        filteredRaces: []
+        filteredRaceArr: []
     }
 
-    makeRaceCards(array){
+    makeRaceCards(arr){
         // console.log(this.props, "race card props")
-        return array.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
-
-        // return this.props.races.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
+        return arr.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
 
     componentDidMount(){
@@ -51,7 +49,7 @@ class RacesContainer extends React.Component{
         return race.name.toLowerCase().includes(userInput)
         })
 
-        this.setState({filteredRaces: foundRaces})
+        this.setState({filteredRaceArr: foundRaces})
 
          
         // console.log(foundRaces)
@@ -63,7 +61,7 @@ class RacesContainer extends React.Component{
             <div id="race-container">
                 <div>
                     < RaceSearch handleSearch={this.handleSearch} filterRaces={this.filterRaces} />
-                   {(this.state.filteredRaces.length !== 0) ? this.makeRaceCards(this.state.filteredRaces) : this.makeRaceCards(this.props.races)}
+                   {(this.state.filteredRaceArr.length !== 0) ? this.makeRaceCards(this.state.filteredRaceArr) : this.makeRaceCards(this.props.races)}
                 </div>
             </div>
         ) 
