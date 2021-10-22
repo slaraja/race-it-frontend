@@ -2,7 +2,7 @@ function RaceCard(props){
     // const {id, name} = race
     
     return(
-        <div class="card" id={`race-${props.id}`}>
+        <div className="card" id={`race-${props.id}`}>
             <h1>{props.name}</h1>
         </div>
     )

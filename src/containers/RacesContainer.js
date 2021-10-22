@@ -8,14 +8,21 @@ import {fetchRaces}  from '../actions/raceActions';
 
 class RacesContainer extends React.Component{
 
-    makeRaceCards(){
+    state = {
+        filteredRaces: []
+    }
+
+    makeRaceCards(array){
         // console.log(this.props, "race card props")
-        return this.props.races.map(race => <RaceCard id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
+        return array.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
+
+        // return this.props.races.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
 
     componentDidMount(){
         console.log("#2: begin componentDidMount")
         this.props.fetchRaces()
+        //move to app, in child components will get data
         console.log("#5: end of componentDidMount")
     }
 
@@ -28,18 +35,42 @@ class RacesContainer extends React.Component{
 //       })
 //     })
 
+//     handleSearch = (e) => {
+//     e.preventDefault();
+//      const filterRaces = this.props.allRaces.filter ((race) => {
+//         return race.name.toLowerCase().includes(this.props.input)
+//     })   
+//     console.log(filterRaces, "filterRaces")
+
+// }
+
+    //get the users input from search comp back to container
+     filterRaces = (userInput) => {
+         console.log("userInput", userInput)
+        const foundRaces = this.props.races.filter ((race) => {
+        return race.name.toLowerCase().includes(userInput)
+        })
+
+        this.setState({filteredRaces: foundRaces})
+
+         
+        // console.log(foundRaces)
+    }
+
     render(){
+        console.log(this.state)
         return(
             <div id="race-container">
                 <div>
-                < RaceSearch handleSearch={this.handleSearch} allRaces={this.props.races} />
-               {this.makeRaceCards()}
-               </div>
+                    < RaceSearch handleSearch={this.handleSearch} filterRaces={this.filterRaces} />
+                   {(this.state.filteredRaces.length !== 0) ? this.makeRaceCards(this.state.filteredRaces) : this.makeRaceCards(this.props.races)}
+                </div>
             </div>
         ) 
     }
-
 }
+
+
     function mapStateToProps(state) {
         console.log(state, "#1: mapStateToProps")
         return {
