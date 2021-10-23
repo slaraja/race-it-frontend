@@ -1,4 +1,6 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import {connect} from 'react-redux';
 import RacesContainer from './containers/RacesContainer';
 import NavBar from './components/NavBar';

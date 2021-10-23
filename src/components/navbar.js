@@ -9,21 +9,21 @@ import {
 
 function NavBar(props){
 
+    //   const colors = {
+    //   black: 'navbar-inverse',
+    //   white: 'navbar-default'
+    // }
+
   return (
-  <div> 
-    { props.title } 
-  <ul>
-    <li>
-      <Link to="/">Home</Link>
-    </li>
-    <li>
-      <Link to="/races">Search Races</Link>
-    </li>
-  </ul>
-  </div>
+    <div>
+      <h1 className="header">{props.title}</h1>
+        <ul>
+          <Link to="/">Home</Link>
+          <br/>
+          <Link to="/races">Search Races</Link>
+        </ul>
+    </div>
   )
 }
-
-
 
 export default NavBar
