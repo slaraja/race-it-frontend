@@ -1,5 +1,4 @@
 function RaceCard(props){
-    // const {id, name} = race
     
     return(
         <div className="card" id={`race-${props.id}`}>

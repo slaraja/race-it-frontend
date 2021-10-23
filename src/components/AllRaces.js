@@ -1,8 +1,7 @@
 import React from 'react';
-import RaceCard from '../components/RaceCard';
-import RaceSearch from '../components/RaceSearch';
 import {connect} from 'react-redux'; //connects react with redux
-import {fetchRaces}  from '../actions/raceActions';
+
+import RaceCard from '../components/RaceCard';
 // import {createRace}  from '../actions/raceActions';
 // import {URL} from '../actions/raceActions';
 

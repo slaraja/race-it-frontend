@@ -1,5 +1,3 @@
-import NavBar from "./NavBar";
-
 const Home = (props) => (
     <div>
       <h1 className="header">{props.title}</h1>
