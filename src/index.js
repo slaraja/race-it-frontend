@@ -9,12 +9,7 @@ import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk'
 import raceReducer from './reducers/raceReducer'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+
 
 const store = createStore(raceReducer, composeWithDevTools(applyMiddleware(thunk)));
 
@@ -24,9 +19,7 @@ const store = createStore(raceReducer, composeWithDevTools(applyMiddleware(thunk
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
         <App />
-      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

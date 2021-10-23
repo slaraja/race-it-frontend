@@ -6,6 +6,13 @@ import NavBar from './components/NavBar';
 import { Component } from 'react';
 import {fetchRaces} from './actions/raceActions';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 class App extends Component{
 
@@ -16,8 +23,10 @@ class App extends Component{
   render() {
       return (
         <div className="App">
-          < NavBar color='orange' title="Race It" />
-          < RacesContainer />
+          <Router>
+            < NavBar color='orange' title="Race It" />
+            < RacesContainer />
+          </Router>
         </div>
       );
   }
