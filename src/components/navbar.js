@@ -18,6 +18,8 @@ function NavBar(props){
           <Link to="/races">All Races</Link>
           <br/>
           <Link to="/search">Search Races</Link>
+          <br/>
+          <Link to="/create">Add a Race</Link>
         </ul>
     </div>
   )

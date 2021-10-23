@@ -1,11 +1,13 @@
 import './App.css';
 
+import {Component} from 'react';
 import {connect} from 'react-redux';
+
 import RacesContainer from './containers/RacesContainer';
 import NavBar from './components/NavBar';
-import { Component } from 'react';
+
 import {fetchRaces} from './actions/raceActions';
-import RaceCard from './components/RaceCard';
+import RaceForm from './components/RaceForm';
 import Home from './components/Home';
 import AllRaces from './components/AllRaces';
 
@@ -27,6 +29,7 @@ class App extends Component{
           <Route path='/' exact component={Home}/>
           <Route path='/races' exact component={AllRaces}/>
           <Route path='/search' component={RacesContainer}/>
+          <Route path='/add' component={RaceForm}/>
         </Switch>  
         </div>
       </Router> 
