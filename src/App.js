@@ -23,10 +23,8 @@ class App extends Component{
   render() {
       return (
         <div className="App">
-          <Router>
             < NavBar color='orange' title="Race It" />
             < RacesContainer />
-          </Router>
         </div>
       );
   }
