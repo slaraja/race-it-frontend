@@ -11,6 +11,7 @@ function NavBar(props){
     <div>
       <h1 className="header">{props.title}</h1>
         <ul> 
+        {/* <img>alt="running" src="https://www.shutterstock.com/image-photo/outdoor-crosscountry-running-summer-sunshine-concept-416963422"</img> */}
           <Link to="/">Home</Link>
           <br/>
           <Link to="/races">All Races</Link>
