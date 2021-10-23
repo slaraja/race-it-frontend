@@ -9,7 +9,6 @@ import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk'
 import raceReducer from './reducers/raceReducer'
-import RaceCard from './components/RaceCard'
 
 import {
   BrowserRouter as Router,
@@ -37,10 +36,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <Route Path="/" component={App}>
-        {/* <Route Path="races" component={RaceCard}/> */}
-        </Route>
-        </Router>
+        <Route Path="/" exact component={App} />
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,23 +1,29 @@
 import React from 'react'
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function NavBar(props){
-    const colors = {
-      black: 'navbar-inverse',
-      white: 'navbar-default'
-    }
-    
-    return (
-      <nav className={`navbar ${colors[props.color]}`}>
-        <div className='container-fluid'>
-          <div className='navbar-header'>
-            <a className='navbar-brand'>
-            { props.title }
-            </a>
-          </div>
-        </div>
-      </nav>
-    )
-  }
+
+  return (
+  <div> 
+    { props.title } 
+  <ul>
+    <li>
+      <Link to="/">Home</Link>
+    </li>
+    <li>
+      <Link to="/races">Search Races</Link>
+    </li>
+  </ul>
+  </div>
+  )
+}
+
+
 
 export default NavBar

@@ -39,14 +39,3 @@ class raceSearch extends React.Component{
 
 export default raceSearch;
 
-// function RaceSearch(props){
-//     return (
-//       <>
-//       <form>
-//         <input
-//           placeholder="Search for a race" onChange={(e)=>props.handleSearch(e.target.value)}
-//         />
-//       </form>
-//       </>
-//     )}
-

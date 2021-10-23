@@ -1,16 +1,16 @@
 import './App.css';
 import {connect} from 'react-redux';
-
 import RacesContainer from './containers/RacesContainer';
 import NavBar from './components/NavBar';
 import { Component } from 'react';
 import {fetchRaces} from './actions/raceActions';
+import RaceCard from './components/RaceCard';
 
 import {
   BrowserRouter as Router,
-  Switch,
+  // Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 
 
@@ -20,11 +20,12 @@ class App extends Component{
     this.props.copiedFetchRaces()
   }
 
-  render() {
+  render(){
       return (
         <div className="App">
             < NavBar color='orange' title="Race It" />
             < RacesContainer />
+            <Route Path="/races" component={RaceCard}/>
         </div>
       );
   }
