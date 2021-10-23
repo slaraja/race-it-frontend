@@ -1,5 +1,4 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {connect} from 'react-redux';
 import RacesContainer from './containers/RacesContainer';
@@ -7,6 +6,7 @@ import NavBar from './components/NavBar';
 import { Component } from 'react';
 import {fetchRaces} from './actions/raceActions';
 import RaceCard from './components/RaceCard';
+import Home from './components/Home';
 
 import {
   BrowserRouter as Router,
@@ -18,21 +18,34 @@ import {
 
 class App extends Component{
 
+  render(){
+    return (
+      <Router>   
+        <div className="App">       
+          <Route Path="/home" component={Home}/>
+          <Route Path="/races" component={RaceCard}/>
+        </div>
+      </Router> 
+    );
+  }
+
+  // render(){
+  //     return (
+  //       <div className="App">
+  //           < NavBar color='orange' title="Race It" />
+  //           < RacesContainer />
+  //           <Route Path="/home" component={Home}/>
+  //           <Route Path="/races" component={RaceCard}/>
+  //       </div>
+  //     );
+  // }
+
   componentDidMount(){
     this.props.copiedFetchRaces()
   }
 
-  render(){
-      return (
-        <div className="App">
-            < NavBar color='orange' title="Race It" />
-            < RacesContainer />
-            <Route Path="/races" component={RaceCard}/>
-        </div>
-      );
-  }
-
 }
+
 
   function mapDispatchToProps(dispatch) {
     //dispatch is a key in the store that gives us the ability to update store
