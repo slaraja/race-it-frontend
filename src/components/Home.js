@@ -6,8 +6,6 @@ const Home = (props) => (
       <h1> Race It </h1>
       <h2> Find your next race! </h2>
       <h2> Click on a link below to get started. </h2>
-      < NavBar />
-
     </div>
 );
 

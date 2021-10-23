@@ -12,7 +12,9 @@ function NavBar(props){
   return (
     <div>
       <h1 className="header">{props.title}</h1>
-        <ul>
+        <ul> 
+          <Link to="/">Home</Link>
+          <br/>
           <Link to="/races">All Races</Link>
           <br/>
           <Link to="/search">Search Races</Link>

@@ -7,12 +7,12 @@ import { Component } from 'react';
 import {fetchRaces} from './actions/raceActions';
 import RaceCard from './components/RaceCard';
 import Home from './components/Home';
+import AllRaces from './components/AllRaces';
 
 import {
   BrowserRouter as Router,
-  // Switch,
+  Switch,
   Route,
-  // Link
 } from "react-router-dom";
 
 
@@ -20,10 +20,14 @@ class App extends Component{
 
   render(){
     return (
-      <Router>   
-        <div className="App">       
-          <Route Path="/home" component={Home}/>
-          <Route Path="/races" component={RaceCard}/>
+      <Router> 
+        <NavBar />  
+        <div className="App">  
+        <Switch>     
+          <Route path='/' exact component={Home}/>
+          <Route path='/races' exact component={AllRaces}/>
+          <Route path='/search' component={RacesContainer}/>
+        </Switch>  
         </div>
       </Router> 
     );
