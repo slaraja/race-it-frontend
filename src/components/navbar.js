@@ -9,11 +9,6 @@ import {
 
 function NavBar(props){
 
-    //   const colors = {
-    //   black: 'navbar-inverse',
-    //   white: 'navbar-default'
-    // }
-
   return (
     <div>
       <h1 className="header">{props.title}</h1>
