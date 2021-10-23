@@ -3,10 +3,9 @@ import './App.css';
 import {Component} from 'react';
 import {connect} from 'react-redux';
 
-import RacesContainer from './containers/RacesContainer';
-import NavBar from './components/NavBar';
-
 import {fetchRaces} from './actions/raceActions';
+import NavBar from './components/NavBar';
+import RacesContainer from './containers/RacesContainer';
 import RaceForm from './components/RaceForm';
 import Home from './components/Home';
 import AllRaces from './components/AllRaces';
@@ -16,7 +15,6 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-
 
 class App extends Component{
 
@@ -36,23 +34,10 @@ class App extends Component{
     );
   }
 
-  // render(){
-  //     return (
-  //       <div className="App">
-  //           < NavBar color='orange' title="Race It" />
-  //           < RacesContainer />
-  //           <Route Path="/home" component={Home}/>
-  //           <Route Path="/races" component={RaceCard}/>
-  //       </div>
-  //     );
-  // }
-
   componentDidMount(){
     this.props.copiedFetchRaces()
   }
-
 }
-
 
   function mapDispatchToProps(dispatch) {
     //dispatch is a key in the store that gives us the ability to update store
