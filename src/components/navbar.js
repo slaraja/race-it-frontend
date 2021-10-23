@@ -13,9 +13,9 @@ function NavBar(props){
     <div>
       <h1 className="header">{props.title}</h1>
         <ul>
-          <Link to="/">Home</Link>
+          <Link to="/races">All Races</Link>
           <br/>
-          <Link to="/races">Search Races</Link>
+          <Link to="/search">Search Races</Link>
         </ul>
     </div>
   )
