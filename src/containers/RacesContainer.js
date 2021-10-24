@@ -2,26 +2,17 @@ import React from 'react';
 import RaceCard from '../components/RaceCard';
 import RaceSearch from '../components/RaceSearch';
 import {connect} from 'react-redux'; //connects react with redux
-import {fetchRaces}  from '../actions/raceActions';
-// import {createRace}  from '../actions/raceActions';
-// import {URL} from '../actions/raceActions';
+
 
 class RacesContainer extends React.Component{
 
     state = {
-        filteredRaceArr: []
+        filteredRaceArr: [],
     }
 
     makeRaceCards(arr){
         return arr.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
-
-    // componentDidMount(){
-    //     console.log("#2: begin componentDidMount")
-    //     this.props.fetchRaces()
-    //     //move to app, in child components will get data
-    //     console.log("#5: end of componentDidMount")
-    // }
 
     // fetch(URL)
     // .then(resp => resp.json())
@@ -31,15 +22,6 @@ class RacesContainer extends React.Component{
     //     races: makeRaceCards
     //   })
     // })
-
-//     handleSearch = (e) => {
-//     e.preventDefault();
-//      const filterRaces = this.props.allRaces.filter ((race) => {
-//         return race.name.toLowerCase().includes(this.props.input)
-//     })   
-//     console.log(filterRaces, "filterRaces")
-
-// }
 
     //get the users input from search comp back to container
      filterRaces = (userInput) => {

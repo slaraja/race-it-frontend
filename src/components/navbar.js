@@ -18,7 +18,7 @@ function NavBar(props){
           <br/>
           <Link to="/search">Search Races</Link>
           <br/>
-          <Link to="/create">Add a Race</Link>
+          <Link to="/add">Add a Race</Link>
         </ul>
     </div>
   )
