@@ -1,5 +1,5 @@
 import React from 'react'
-// import {connect} from 'react-redux'
+import {connect} from 'react-redux'
 
 // import {createRace} from '..actions/raceActions'
 
@@ -16,13 +16,14 @@ class RaceForm extends React.Component{
         this.setState({
             [name]: value
             //key value pair, bracket allows for interpolation
-            //so if I add other attributes, it will allow the value to get set for the other attributes
+            //if I add other attributes, it will allow the value to get set for the other attributes
         })
 
     }
 
     handleOnSubmit = (e) => {
         e.preventDefault();
+        console.log(this.props)
         // this.props.createRace(race)
     }
 
@@ -37,7 +38,7 @@ class RaceForm extends React.Component{
                 <form onSubmit={this.handleOnSubmit}>
                 <label> Name: </label>
                 <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} />
-                  {/* <input type="text" city="raceCity" onChange={(event) => this.props.raceCity}
+                  {/* <input type="text" city="raceCity" onChange={(event) => this.props.city}
                   /> */}
                 <br/>
                 <br/>
@@ -48,6 +49,10 @@ class RaceForm extends React.Component{
     };
 }
 
-export default RaceForm
+const mapDispatchToProps = dispatch => {
+    return { addRace: race => dispatch(addRace(race))};
+}
 
-// export default connect(null, {createRace})(RaceForm)
+// export default RaceForm
+
+export default connect(null, mapDispatchToProps)(RaceForm)
