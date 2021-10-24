@@ -3,14 +3,24 @@ import React from 'react'
 class RaceForm extends React.Component{
 
     state = {
-        raceName: ""
+        name: ""
     }
 
     handleOnChange = (e) => {
-        console.log(e.target.value, "e.target.value")
+        const name = e.target.name
+        const value = e.target.value
+
         this.setState({
-            input: e.target.value
+            [name]: value
+            //key value pair, bracket allows for interpolation
+            //so if I add other attributes, it will allow the value to get set for the other attributes
         })
+    }
+
+    handleAddRace = (e) => {
+        e.preventDefault();
+        // this.props.filterRaces(this.state.input)
+        // console.log("handleAddRace") 
     }
 
     render() {
@@ -18,13 +28,17 @@ class RaceForm extends React.Component{
             <div>
                 <h1> Add a Race </h1>
                 <br/>
-                <h3> Enter information for a new race in the form below. Hit "Submit" and your race will be added to the database. </h3>
+                <h3> Enter information for a new race in the form below.</h3>
+                <h3> Hit "Submit" and your race will be added to the database. </h3>
+                <br/>
                 <form>
                 <label> Name: </label>
-                  <input type="text" name="raceName" onChange={this.handleOnChange}
-                    value={this.state.raceName} />
-                  {/* <input type="text" city="raceCity" onChange={(event) => this.props.handleChange(e)} value={this.props.formData.lastName}
+                <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} />
+                  {/* <input type="text" city="raceCity" onChange={(event) => this.props.raceCity}
                   /> */}
+                <br/>
+                <br/>
+                <input type="submit" value="Add Race" />
                 </form>
               </div>
         );
