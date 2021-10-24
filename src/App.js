@@ -4,6 +4,7 @@ import {Component} from 'react';
 import {connect} from 'react-redux';
 
 import {fetchRaces} from './actions/raceActions';
+
 import NavBar from './components/NavBar';
 import RacesContainer from './containers/RacesContainer';
 import RaceForm from './components/RaceForm';

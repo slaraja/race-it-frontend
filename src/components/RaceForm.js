@@ -1,7 +1,10 @@
 import React from 'react'
-import {connect} from 'react-redux'
 
-// import {createRace} from '..actions/raceActions'
+import {connect} from 'react-redux';
+
+// import {addRace} from '..actions/raceActions';
+import {createRaceFetch} from '/Users/slaraja/Development/code/Ph5/project/race-it-frontend/src/actions/raceActions.js';
+
 
 class RaceForm extends React.Component{
 
@@ -50,9 +53,9 @@ class RaceForm extends React.Component{
 }
 
 const mapDispatchToProps = dispatch => {
-    return { addRace: race => dispatch(addRace(race))};
+    return { copiedCreateRace: race => dispatch(createRaceFetch(race))};
 }
 
+export default connect(null, mapDispatchToProps)(RaceForm)
 // export default RaceForm
 
-export default connect(null, mapDispatchToProps)(RaceForm)

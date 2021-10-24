@@ -1,4 +1,4 @@
-const URL = "http://localhost:3000/races"
+export const URL = "http://localhost:3000/races"
 
 export const startRaceFetch = (races) => ({type: "START_FETCHING_RACES", payload: races})
 
@@ -8,7 +8,6 @@ export const addRace = (race) => ({type: "ADDED_RACE", payload: race})
 export const fetchRaces = () => {
     console.log("#3: in fetchRaces")
     return (dispatch) => {
-    // fetch("http://localhost:3000/races")
     fetch(URL)
     .then(resp => resp.json())
     //converts stringified format to json
@@ -22,7 +21,7 @@ export const fetchRaces = () => {
     }
 }
 
-export const createRace = (race) => {
+export const createRaceFetch = (race) => {
     return (dispatch) => {
         const configObj = {
             method: 'POST',
