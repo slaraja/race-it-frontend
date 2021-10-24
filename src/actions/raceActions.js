@@ -1,4 +1,4 @@
-export const URL = "http://localhost:3000/races"
+const URL = "http://localhost:3000/races"
 
 export const startRaceFetch = (races) => ({type: "START_FETCHING_RACES", payload: races})
 

@@ -51,7 +51,7 @@ class App extends Component{
 
   //get access to dispatch function
   //passing action creator to redux to dispatch
-  //maps dispatch to props - provies access to this.props in componentdidmount
+  //maps dispatch to props - provides access to this.props in componentdidmount
 
   export default connect(null, mapDispatchToProps)(App);
 

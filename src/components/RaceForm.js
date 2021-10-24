@@ -1,4 +1,7 @@
 import React from 'react'
+// import {connect} from 'react-redux'
+
+// import {createRace} from '..actions/raceActions'
 
 class RaceForm extends React.Component{
 
@@ -15,29 +18,12 @@ class RaceForm extends React.Component{
             //key value pair, bracket allows for interpolation
             //so if I add other attributes, it will allow the value to get set for the other attributes
         })
+
     }
 
     handleOnSubmit = (e) => {
         e.preventDefault();
-        // set up object
-        const race = {...this.state}
-        const configObj = {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-                "Accepts": "application/json"
-            },
-            body: JSON.stringify(race)
-        }
-        fetch(url, configObj)
-        .then(resp => resp.json())
-        .then(json => {
-            this.props.addRace(json)
-
-        })
-        // send a fetch request
-        // save to current state of races
-    
+        // this.props.createRace(race)
     }
 
     render() {
@@ -62,4 +48,6 @@ class RaceForm extends React.Component{
     };
 }
 
-export default RaceForm;
+export default RaceForm
+
+// export default connect(null, {createRace})(RaceForm)
