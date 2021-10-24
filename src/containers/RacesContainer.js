@@ -27,7 +27,8 @@ class RacesContainer extends React.Component{
      filterRaces = (userInput) => {
          console.log("userInput", userInput)
         const foundRaces = this.props.races.filter ((race) => {
-        return race.name.toLowerCase().includes(userInput)
+        return race.name.toLowerCase().includes(userInput.toLowerCase())
+
         })
 
         this.setState({filteredRaceArr: foundRaces})
