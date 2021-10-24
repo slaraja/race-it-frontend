@@ -17,10 +17,27 @@ class RaceForm extends React.Component{
         })
     }
 
-    handleAddRace = (e) => {
+    handleOnSubmit = (e) => {
         e.preventDefault();
-        // this.props.filterRaces(this.state.input)
-        // console.log("handleAddRace") 
+        // set up object
+        const race = {...this.state}
+        const configObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accepts": "application/json"
+            },
+            body: JSON.stringify(race)
+        }
+        fetch(url, configObj)
+        .then(resp => resp.json())
+        .then(json => {
+            this.props.addRace(json)
+
+        })
+        // send a fetch request
+        // save to current state of races
+    
     }
 
     render() {
@@ -31,7 +48,7 @@ class RaceForm extends React.Component{
                 <h3> Enter information for a new race in the form below.</h3>
                 <h3> Hit "Submit" and your race will be added to the database. </h3>
                 <br/>
-                <form>
+                <form onSubmit={this.handleOnSubmit}>
                 <label> Name: </label>
                 <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} />
                   {/* <input type="text" city="raceCity" onChange={(event) => this.props.raceCity}
