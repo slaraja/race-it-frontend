@@ -15,14 +15,13 @@ class RaceForm extends React.Component{
         this.setState({
             name: e.target.value
         })
-
     }
 
 
     handleOnSubmit = (e) => {
         e.preventDefault();
         console.log(this.props)
-        // this.props.createRaceFetch(this.state.name)
+        this.props.copiedCreateRaceFetch(this.state.name)
     }
 
     render() {
@@ -49,6 +48,13 @@ class RaceForm extends React.Component{
 const mapDispatchToProps = dispatch => {
     return { copiedCreateRaceFetch: race => dispatch(createRaceFetch(race))};
 }
+
+
+// a key that returns a function
+//takes dispatch, connects to the Redux store
+//createRaceFetch is imported from the actions folder, and takes in an arg of race
+// the function is saved in the copy
+// the copy is what is called in handleOnSubmit
 
 export default connect(null, mapDispatchToProps)(RaceForm)
 // export default RaceForm
