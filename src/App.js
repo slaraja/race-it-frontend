@@ -45,6 +45,7 @@ class App extends Component{
     //causes reducer to run, which is how we update store
     // console.log(fetchRaces, "fetchRaces")
     return {
+        // name a function, then dispatch an action
         copiedFetchRaces: () => dispatch(fetchRaces())
     }
         //gives a prop of .races

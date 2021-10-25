@@ -2,7 +2,6 @@ import React from 'react'
 
 import {connect} from 'react-redux';
 
-// import {addRace} from '..actions/raceActions';
 import {createRaceFetch} from '/Users/slaraja/Development/code/Ph5/project/race-it-frontend/src/actions/raceActions.js';
 
 
@@ -13,21 +12,17 @@ class RaceForm extends React.Component{
     }
 
     handleOnChange = (e) => {
-        const name = e.target.name
-        const value = e.target.value
-
         this.setState({
-            [name]: value
-            //key value pair, bracket allows for interpolation
-            //if I add other attributes, it will allow the value to get set for the other attributes
+            name: e.target.value
         })
 
     }
 
+
     handleOnSubmit = (e) => {
         e.preventDefault();
         console.log(this.props)
-        // this.props.createRace(race)
+        // this.props.createRaceFetch(this.state.name)
     }
 
     render() {
@@ -36,10 +31,9 @@ class RaceForm extends React.Component{
                 <h1> Add a Race </h1>
                 <br/>
                 <h3> Enter information for a new race in the form below.</h3>
-                <h3> Hit "Submit" and your race will be added to the database. </h3>
                 <br/>
                 <form onSubmit={this.handleOnSubmit}>
-                <label> Name: </label>
+                <label> Name:  </label>
                 <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} />
                   {/* <input type="text" city="raceCity" onChange={(event) => this.props.city}
                   /> */}
@@ -53,7 +47,7 @@ class RaceForm extends React.Component{
 }
 
 const mapDispatchToProps = dispatch => {
-    return { copiedCreateRace: race => dispatch(createRaceFetch(race))};
+    return { copiedCreateRaceFetch: race => dispatch(createRaceFetch(race))};
 }
 
 export default connect(null, mapDispatchToProps)(RaceForm)
