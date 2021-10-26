@@ -11,6 +11,8 @@ import RaceForm from './components/RaceForm';
 import Home from './components/Home';
 import AllRaces from './components/AllRaces';
 
+import Image from './components/Image'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,7 +25,7 @@ class App extends Component{
     return (
       <Router> 
         <NavBar />  
-        <div className="App">  
+        <div className="App" style={{ backgroundImage: `url(${Image})` }}>  
         <Switch>     
           <Route path='/' exact component={Home}/>
           <Route path='/races' exact component={AllRaces}/>
