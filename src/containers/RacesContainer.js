@@ -25,9 +25,11 @@ class RacesContainer extends React.Component{
 
     //get the users input from search comp back to container
      filterRaces = (userInput) => {
-         console.log("userInput", userInput)
+        //  console.log("userInput", userInput)
         const foundRaces = this.props.races.filter ((race) => {
-        return race.name.toLowerCase().includes(userInput.toLowerCase())
+        // return race.name.toLowerCase().includes(userInput.toLowerCase())
+        return race.name.toLowerCase().includes(userInput)
+
 
         })
 

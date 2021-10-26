@@ -5,7 +5,6 @@ export const addRace = (race) => ({type: "ADDED_RACE", payload: race})
 
 //thunk gives ability to return a function with a default arg of dispatch
 export const fetchRaces = () => {
-    console.log("#3: in fetchRaces")
     return (dispatch) => {
         fetch("http://localhost:3000/races")
         .then(resp => resp.json())
@@ -20,8 +19,8 @@ export const fetchRaces = () => {
     }
 }
 
-export const createRaceFetch = (race) => {
-    //return a function that is going to get called with receiving dispatch as an arg
+export const createRaceFetch = (race) => {    //return a function that is going to get called with receiving dispatch as an arg
+    // console.log(race)
     return (dispatch) => {
         const configObj = {
             method: 'POST',

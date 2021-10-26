@@ -20,8 +20,8 @@ class RaceForm extends React.Component{
 
     handleOnSubmit = (e) => {
         e.preventDefault();
-        console.log(this.props)
-        this.props.copiedCreateRaceFetch(this.state.name)
+        console.log(this.state.name)
+        this.props.copiedCreateRaceFetch(this.state)
     }
 
     render() {
