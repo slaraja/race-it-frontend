@@ -14,21 +14,17 @@ class RacesContainer extends React.Component{
         return arr.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
 
-    // fetch(URL)
-    // .then(resp => resp.json())
-    // .then(data => {
-    //   let race = data.data.map(race => xxxx)
-    //   this.setState({
-    //     races: makeRaceCards
-    //   })
-    // })
 
     //get the users input from search comp back to container
      filterRaces = (userInput) => {
-        //  console.log("userInput", userInput)
+        // console.log("userInput", userInput)
         const foundRaces = this.props.races.filter ((race) => {
         // return race.name.toLowerCase().includes(userInput.toLowerCase())
-        return race.name.toLowerCase().includes(userInput)
+        return race.name.toLowerCase().includes(userInput) || race.name.includes(userInput)
+        // return race.name.includes(userInput.toLowerCase())
+        // return race.name.includes(userInput) //lowercase doesn't return
+
+
 
 
         })
