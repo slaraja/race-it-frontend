@@ -5,6 +5,7 @@
 Find your next race by searching the Race It database of running events.
 
 ## Application Instructions
+
 - User can view a list of races in the database.
 - User can search races.
 - User can add new races to the list.
@@ -33,7 +34,7 @@ Frontend (React-Redux):
 3. Open a terminal on your computer
 4. Download the file to your computer
 5. Navigate to the folder where the file is saved
-6. Run 'open index.html'
+6. Run 'npm start'
 
 ## Author
 
@@ -41,7 +42,7 @@ Frontend (React-Redux):
 
 ## Contributing:
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/slaraja/workout-dice-backend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/slaraja/race-it-frontend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
 ## License:
 
