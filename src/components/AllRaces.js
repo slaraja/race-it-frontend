@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux'; //connects react with redux
 
 import RaceCard from '../components/RaceCard';
+
+import AllRacesText from '../components/AllRacesText';
 // import {createRace}  from '../actions/raceActions';
 // import {URL} from '../actions/raceActions';
 
@@ -20,9 +22,7 @@ class AllRaces extends React.Component{
         
         return(
             <div>
-                <h1> All Races </h1>
-                <h2> Below is a list of all running events in our database. </h2>
-                <h2> Click on a link above to Search Races or go back to Home. </h2>
+                < AllRacesText />
                 <br/>
                 {this.makeRaceCards(this.props.races)}
             </div>
