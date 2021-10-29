@@ -19,6 +19,7 @@ class raceSearch extends React.Component{
     handleSearch = (e) => {
         e.preventDefault();
         this.props.filterRaces(this.state.input)
+
         // this.props.filterRaces(this.state)
         // console.log("handleSearch") 
     }

@@ -20,7 +20,6 @@ class RaceForm extends React.Component{
 
     handleOnSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.name)
         this.props.copiedCreateRaceFetch(this.state)
     }
 
@@ -34,8 +33,6 @@ class RaceForm extends React.Component{
                 <form onSubmit={this.handleOnSubmit}>
                 <label> Name:  </label>
                 <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} />
-                  {/* <input type="text" city="raceCity" onChange={(event) => this.props.city}
-                  /> */}
                 <br/>
                 <br/>
                 <input type="submit" value="Add Race" />
@@ -57,5 +54,4 @@ const mapDispatchToProps = dispatch => {
 // the copy is what is called in handleOnSubmit
 
 export default connect(null, mapDispatchToProps)(RaceForm)
-// export default RaceForm
 
