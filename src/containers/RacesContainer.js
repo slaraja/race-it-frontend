@@ -20,7 +20,7 @@ class RacesContainer extends React.Component{
         // console.log("userInput", userInput)
         const foundRaces = this.props.races.filter ((race) => {
         // return race.name.toLowerCase().includes(userInput.toLowerCase())
-        return race.name.toLowerCase().includes(userInput) || race.name.includes(userInput)
+        return race.name.toLowerCase().includes(userInput) || race.name.includes(userInput) || race.name.toUpperCase().includes(userInput)
         // return race.name.includes(userInput.toLowerCase())
         // return race.name.includes(userInput) //lowercase doesn't return
 
