@@ -1,7 +1,7 @@
 import React from 'react';
 import RaceCard from '../components/RaceCard';
 import RaceSearch from '../components/RaceSearch';
-import {connect} from 'react-redux'; //connects react with redux
+import {connect} from 'react-redux'
 
 
 class RacesContainer extends React.Component{
