@@ -37,7 +37,7 @@ class AllRaces extends React.Component{
             races: state.races
             //gives a prop of .races
             //access to props, dispatch helps with manipulation
-        };
+        }
     }
 
 

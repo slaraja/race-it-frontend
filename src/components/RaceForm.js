@@ -38,8 +38,8 @@ class RaceForm extends React.Component{
                 <input type="submit" value="Add Race" />
                 </form>
               </div>
-        );
-    };
+        )
+    }
 }
 
 const mapDispatchToProps = dispatch => {

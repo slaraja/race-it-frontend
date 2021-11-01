@@ -19,10 +19,8 @@ function NavBar(props){
             <br/>
             <Link to="/add">Add a Race</Link>
           </ul>
-
       </div>
     </div>
-
   )
 }
 
