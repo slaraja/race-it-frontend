@@ -19,8 +19,6 @@ class raceSearch extends React.Component{
     handleSearch = (e) => {
         e.preventDefault();
         this.props.filterRaces(this.state.input)
-
-        // this.props.filterRaces(this.state)
         // console.log("handleSearch") 
     }
 
@@ -28,7 +26,7 @@ class raceSearch extends React.Component{
         return (
         <form onSubmit={this.handleSearch}>
             <input type="text" input="input" onChange={this.handleOnChange} value={this.state.input}/>
-            <input type="submit" value="Find Races"/>
+            <input type="submit" value="Find Races by Name"/>
         </form>
         )
     }
