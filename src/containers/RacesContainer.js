@@ -1,5 +1,5 @@
 import React from 'react';
-import RaceCard from '../components/RaceCard';
+import RaceList from '../components/RaceList';
 import RaceSearch from '../components/RaceSearch';
 import {connect} from 'react-redux'
 
@@ -11,7 +11,7 @@ class RacesContainer extends React.Component{
     }
 
     makeRaceCards(arr){
-        return arr.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
+        return arr.map(race => <RaceList key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
 
 

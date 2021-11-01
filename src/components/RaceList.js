@@ -1,4 +1,4 @@
-function RaceCard(props){
+function RaceList(props){
     
     return(
         <div className="card" id={`race-${props.id}`}>
@@ -7,7 +7,7 @@ function RaceCard(props){
     )
 }
 
-export default RaceCard 
+export default RaceList
 
 //id interpolation is POJS
 //if this was a class, props would come from constructor 

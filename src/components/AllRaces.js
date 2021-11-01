@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'; //connects react with redux
 
-import RaceCard from '../components/RaceCard';
+import RaceList from './RaceList';
 
 import AllRacesText from '../components/AllRacesText';
 // import {createRace}  from '../actions/raceActions';
@@ -13,8 +13,8 @@ class AllRaces extends React.Component{
         allRacesArr: []
     }
 
-    makeRaceCards(arr){
-        return arr.map(race => <RaceCard key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
+    makeRaceList(arr){
+        return arr.map(race => <RaceList key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
 
     render(){
@@ -24,7 +24,7 @@ class AllRaces extends React.Component{
             <div>
                 < AllRacesText />
                 <br/>
-                {this.makeRaceCards(this.props.races)}
+                {this.makeRaceList(this.props.races)}
             </div>
         ) 
     }
