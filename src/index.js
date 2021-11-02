@@ -1,5 +1,4 @@
 import React from 'react';
-//allows us to create a virtual DOM
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -13,9 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(raceReducer, composeWithDevTools(applyMiddleware(thunk)));
 
-//App is being called as an HTMl element and being executed as function.
-//Store variable is defined above and can be anything
-//Store next to provider is a special word that comes from the redux library
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -24,9 +20,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-//Function above takes in 2 args (before thunk)
-//1. What to render on the page
-//2. Where to render it on the page
 
 reportWebVitals();

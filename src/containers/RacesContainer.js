@@ -14,21 +14,16 @@ class RacesContainer extends React.Component{
         return arr.map(race => <RaceList key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
 
-
-    //get the users input from search comp back to container
      filterRaces = (userInput) => {
         const foundRaces = this.props.races.filter ((race) => {
         return race.name.toLowerCase().includes(userInput) || race.name.includes(userInput) || race.name.toUpperCase().includes(userInput)
         })
-
-        this.setState({filteredRaceArr: foundRaces})
-        // console.log(foundRaces)
+        this.setState({
+            filteredRaceArr: foundRaces
+        })
     }
 
-    //renders a RaceSearch component that renders the search bar
-    render(){
-        console.log(this.state)
-        
+    render(){        
         return(
             <div id="race-container">
                 <div>
@@ -43,7 +38,7 @@ class RacesContainer extends React.Component{
 //takes current state as arg, and can also take ownProps
 //mapState will be involked and passed to races as props 
     function mapStateToProps(state) {
-        console.log(state, "#1: mapStateToProps")
+        console.log(state, "mapStateToProps")
         return {
             races: state.races
             //gives a prop of .races
