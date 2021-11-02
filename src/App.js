@@ -15,8 +15,6 @@ import {
   Route,
 } from "react-router-dom";
 
-//us switch to make sure one route matches at the same time, risk of targeting wrong route
-
 class App extends Component{
 
   render(){
@@ -35,28 +33,16 @@ class App extends Component{
     )
   }
 
-  //used to perform DOM manipulation or data fetching
   componentDidMount(){
-    console.log("#1 - begin componentdidmount")
     this.props.copiedFetchRaces() 
-    //async stuff is happening 
-    console.log("#4 - after componentdidmount")
-
   }
 }
 
   function mapDispatchToProps(dispatch) {
-    //dispatch is a key in the store that gives us the ability to update store
-    //causes reducer to run, which is how we update store
     return {
-        // name a function, then dispatch an action
         copiedFetchRaces: () => dispatch(fetchRaces())
     }
   }
-
-  //get access to dispatch function
-  //passing action creator to redux to dispatch
-  //maps dispatch to props - provides access to this.props in componentdidmount
 
   export default connect(null, mapDispatchToProps)(App);
 

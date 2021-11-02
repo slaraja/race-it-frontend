@@ -37,18 +37,6 @@ class RaceForm extends React.Component{
                 <label> Name:  </label>
                 <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} />
                 <br/>
-                {/* <label> City:  </label>
-                <input type="text" city="city" onChange={this.handleOnChange} value={this.state.city} />
-                <br/>
-                <label> State:  </label>
-                <input type="text" state="state" onChange={this.handleOnChange} value={this.state.state} />
-                <br/>
-                <label> Zipcode:  </label>
-                <input type="text" zipcode="zipcode" onChange={this.handleOnChange} value={this.state.zipcode} />
-                <br/>
-                <br/> */}
-                <br/>
-                <br/>
                 <input type="submit" value="Add Race" />
                 </form>
               </div>
