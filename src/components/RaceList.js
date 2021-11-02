@@ -8,6 +8,3 @@ function RaceList(props){
 }
 
 export default RaceList
-
-//id interpolation is POJS
-//if this was a class, props would come from constructor 
