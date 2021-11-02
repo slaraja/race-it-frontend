@@ -1,11 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux'; //connects react with redux
-
+import {connect} from 'react-redux'; 
 import RaceList from './RaceList';
-
 import AllRacesText from '../components/AllRacesText';
-// import {createRace}  from '../actions/raceActions';
-// import {URL} from '../actions/raceActions';
 
 class AllRaces extends React.Component{
 
@@ -17,9 +13,7 @@ class AllRaces extends React.Component{
         return arr.map(race => <RaceList key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
 
-    render(){
-        console.log(this.state)
-        
+    render(){        
         return(
             <div>
                 < AllRacesText />
@@ -30,16 +24,11 @@ class AllRaces extends React.Component{
     }
 }
 
-
     function mapStateToProps(state) {
-        console.log(state, "#1: mapStateToProps")
         return {
             races: state.races
-            //gives a prop of .races
-            //access to props, dispatch helps with manipulation
         }
     }
-
 
 export default connect(mapStateToProps)(AllRaces);
 
