@@ -10,10 +10,4 @@ const Home = (props) => (
     </div>
 )
 
-
 export default Home
-
-
-//h1 is an example of JSX, which allows us to rneder actual Javascript elements
-//similar to ERB in Ruby
-//
