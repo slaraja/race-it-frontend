@@ -35,7 +35,6 @@ class RacesContainer extends React.Component{
 }
 
     function mapStateToProps(state) {
-        console.log(state, "mapStateToProps")
         return {
             races: state.races
         };
