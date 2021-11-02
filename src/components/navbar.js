@@ -1,5 +1,6 @@
 import React from 'react'
 
+//import link so that when you click, the link will communicate with react router and understand what to render
 import {
   Link
 } from "react-router-dom";
@@ -7,7 +8,7 @@ import {
 function NavBar(props){
 
   return (
-    <div class="nav">
+    <div className="nav">
       <div>
         <h1 className="header">{props.title}</h1>
           <ul> 

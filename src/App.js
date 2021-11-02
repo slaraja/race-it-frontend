@@ -1,16 +1,12 @@
 import './App.css';
-
 import {Component} from 'react';
 import {connect} from 'react-redux';
-
 import {fetchRaces} from './actions/raceActions';
-
 import NavBar from './components/NavBar';
 import RacesContainer from './containers/RacesContainer';
 import RaceForm from './components/RaceForm';
 import Home from './components/Home';
 import AllRaces from './components/AllRaces';
-
 import Image from './components/Image'
 
 import {
@@ -18,6 +14,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+
+//us switch to make sure one route matches at the same time, risk of targeting wrong route
 
 class App extends Component{
 
@@ -34,23 +32,26 @@ class App extends Component{
         </Switch>  
         </div>
       </Router> 
-    );
+    )
   }
 
+  //used to perform DOM manipulation or data fetching
   componentDidMount(){
-    this.props.copiedFetchRaces()
+    console.log("#1 - begin componentdidmount")
+    this.props.copiedFetchRaces() 
+    //async stuff is happening 
+    console.log("#4 - after componentdidmount")
+
   }
 }
 
   function mapDispatchToProps(dispatch) {
     //dispatch is a key in the store that gives us the ability to update store
     //causes reducer to run, which is how we update store
-    // console.log(fetchRaces, "fetchRaces")
     return {
         // name a function, then dispatch an action
         copiedFetchRaces: () => dispatch(fetchRaces())
     }
-        //gives a prop of .races
   }
 
   //get access to dispatch function

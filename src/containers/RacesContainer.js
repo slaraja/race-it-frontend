@@ -10,7 +10,7 @@ class RacesContainer extends React.Component{
         filteredRaceArr: [],
     }
 
-    makeRaceCards(arr){
+    makeRaceList(arr){
         return arr.map(race => <RaceList key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
     }
 
@@ -22,11 +22,10 @@ class RacesContainer extends React.Component{
         })
 
         this.setState({filteredRaceArr: foundRaces})
-
-         
         // console.log(foundRaces)
     }
 
+    //renders a RaceSearch component that renders the search bar
     render(){
         console.log(this.state)
         
@@ -34,14 +33,15 @@ class RacesContainer extends React.Component{
             <div id="race-container">
                 <div>
                     < RaceSearch handleSearch={this.handleSearch} filterRaces={this.filterRaces} />
-                   {(this.state.filteredRaceArr.length !== 0) ? this.makeRaceCards(this.state.filteredRaceArr) : this.makeRaceCards(this.props.races)}
+                   {(this.state.filteredRaceArr.length !== 0) ? this.makeRaceList(this.state.filteredRaceArr) : this.makeRaceList(this.props.races)}
                 </div>
             </div>
         ) 
     }
 }
 
-
+//takes current state as arg, and can also take ownProps
+//mapState will be involked and passed to races as props 
     function mapStateToProps(state) {
         console.log(state, "#1: mapStateToProps")
         return {

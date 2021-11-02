@@ -1,4 +1,5 @@
 import React from 'react';
+//allows us to create a virtual DOM
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -24,16 +25,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Provider store={store}>
-//       <Router>
-//         <Route Path="/" exact component={App} />
-//       </Router>
-//     </Provider>
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
 //Function above takes in 2 args (before thunk)
 //1. What to render on the page
 //2. Where to render it on the page

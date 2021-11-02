@@ -1,10 +1,12 @@
+//action creator - a function that returns an object
+//type property that tells the action what to do
 export const startRaceFetch = (races) => ({type: "START_FETCHING_RACES", payload: races})
 
-//variable set to a function that returns an action
 export const addRace = (race) => ({type: "ADDED_RACE", payload: race})
 
 //thunk gives ability to return a function with a default arg of dispatch
 export const fetchRaces = () => {
+    console.log("#2")
     return (dispatch) => {
         fetch("http://localhost:3000/races")
         .then(resp => resp.json())
@@ -12,10 +14,11 @@ export const fetchRaces = () => {
         .then(json => {
             //happens async
             //causes a re-render
-            dispatch(startRaceFetch(json)) //calling reducer funciton
+            dispatch(startRaceFetch(json)) //calling reducer function
+            console.log("#6")  //.then takes time to process
         })
-        console.log("#4")
         //handle the json, update state
+        console.log("#3")
     }
 }
 
