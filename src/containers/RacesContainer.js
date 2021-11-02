@@ -3,7 +3,6 @@ import RaceList from '../components/RaceList';
 import RaceSearch from '../components/RaceSearch';
 import {connect} from 'react-redux'
 
-
 class RacesContainer extends React.Component{
 
     state = {
@@ -35,21 +34,12 @@ class RacesContainer extends React.Component{
     }
 }
 
-//takes current state as arg, and can also take ownProps
-//mapState will be involked and passed to races as props 
     function mapStateToProps(state) {
         console.log(state, "mapStateToProps")
         return {
             races: state.races
-            //gives a prop of .races
-            //access to props, dispatch helps with manipulation
         };
     }
-
-//As the first argument passed in to connect, mapStateToProps is used for selecting the part of the data from the store that the connected component needs. It’s frequently referred to as just mapState for short.
-//It is called every time the store state changes.
-//It receives the entire store state, and should return an object of data this component needs.
-
 
 export default connect(mapStateToProps)(RacesContainer);
 
