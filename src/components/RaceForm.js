@@ -8,10 +8,7 @@ import {createRaceFetch} from '/Users/slaraja/Development/code/Ph5/project/race-
 class RaceForm extends React.Component{
 
     state = {
-        name: "",
-        // city: "",
-        // state: "",
-        // zipcode: "",
+        name: ""
     }
 
     handleOnChange = (e) => {
@@ -47,13 +44,6 @@ class RaceForm extends React.Component{
 const mapDispatchToProps = dispatch => {
     return { copiedCreateRaceFetch: race => dispatch(createRaceFetch(race))};
 }
-
-
-// a key that returns a function
-//takes dispatch, connects to the Redux store
-//createRaceFetch is imported from the actions folder, and takes in an arg of race
-// the function is saved in the copy
-// the copy is what is called in handleOnSubmit
 
 export default connect(null, mapDispatchToProps)(RaceForm)
 
