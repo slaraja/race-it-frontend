@@ -1,6 +1,5 @@
 import React from 'react'
 
-//import link so that when you click, the link will communicate with react router and understand what to render
 import {
   Link
 } from "react-router-dom";
