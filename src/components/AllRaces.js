@@ -10,7 +10,7 @@ class AllRaces extends React.Component{
     }
 
     makeRaceList(arr){
-        return arr.map(race => <RaceList key={race.id} id={race.id} name={race.name} date={race.date} state={race.state} city={race.city} zipcode={race.zipcode} />)
+        return arr.map(race => <RaceList key={race.id} id={race.id} name={race.name} date={race.date} state={race.state  } city={race.city} zipcode={race.zipcode} />)
     }
 
     render(){        
