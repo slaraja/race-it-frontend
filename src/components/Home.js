@@ -7,6 +7,7 @@ const Home = (props) => (
       <h2> Find your next race! </h2>
       <h2> Click on a link above to get started. </h2>
       < Image />  
+
     </div>
 )
 
