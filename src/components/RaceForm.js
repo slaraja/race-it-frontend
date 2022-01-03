@@ -8,7 +8,11 @@ import {createRaceFetch} from '/Users/slaraja/Development/code/Ph5/project/race-
 class RaceForm extends React.Component{
 
     state = {
-        name: ""
+        name: "",
+        date: "",
+        state: "",
+        city: "",
+        zipcode: ""
     }
 
     handleOnChange = (e) => {
@@ -16,7 +20,6 @@ class RaceForm extends React.Component{
             name: e.target.value
         })
     }
-
 
     handleOnSubmit = (e) => {
         e.preventDefault();
@@ -33,6 +36,16 @@ class RaceForm extends React.Component{
                 <form onSubmit={this.handleOnSubmit}>
                 <label> Name:  </label>
                 <input type="text" name="name" onChange={this.handleOnChange} value={this.state.name} />
+                <label> Date:  </label>
+                <input type="text" name="date" onChange={this.handleOnChange} value={this.state.date} />
+                <label> State:  </label>
+                <input type="text" name="state" onChange={this.handleOnChange} value={this.state.state} />
+
+                <label> City:  </label>
+                <input type="text" name="city" onChange={this.handleOnChange} value={this.state.city} />
+                <label> Zipcode:  </label>
+                <input type="text" name="zipcode" onChange={this.handleOnChange} value={this.state.zipcode} />
+                <br/>
                 <br/>
                 <input type="submit" value="Add Race" />
                 </form>
@@ -40,6 +53,8 @@ class RaceForm extends React.Component{
         )
     }
 }
+
+
 
 const mapDispatchToProps = dispatch => {
     return { copiedCreateRaceFetch: race => dispatch(createRaceFetch(race))};
